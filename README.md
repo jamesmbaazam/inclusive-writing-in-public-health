@@ -2,7 +2,7 @@
 
 Version 0.1.0
 
-A [Claude Code](https://claude.com/claude-code) skill that checks, and helps fix, stigmatising or dehumanising language in public health writing.
+A [Claude Code](https://claude.com/claude-code) skill that checks, and helps fix, stigmatising or dehumanising language in public health writing. It combines the [ECDC inclusive writing guidelines](https://www.ecdc.europa.eu/en/publications-data/inclusive-writing-ecdc) (public health specific rules) with the [alex](https://github.com/get-alex/alex) tool (general gendered, ableist, racial and condescending wording), so you get both kinds of check in one pass.
 
 > **Public health only.** The guidance behind this skill was written for public health and infectious disease communication. It may not apply, or may be unhelpful, in other fields or contexts (for example where a term has a fixed technical meaning, or where a community prefers identity-first language). Use judgement, and don't apply it mechanically outside public health.
 
@@ -16,7 +16,7 @@ This skill gives you a quick, consistent first pass over a manuscript, report, p
 
 1. **Point Claude at your text.** A file, a folder or pasted text (`.md`, `.qmd`, `.Rmd`, `.tex`, `.txt`, `.html`, `.docx`).
 2. **A scanner looks for flagged wording.** It uses about 50 rules taken from the ECDC guide and prints each hit with a suggested alternative, the reason, and the guide section. Clear matches are marked `!`; wording that is only sometimes a problem is marked `?`.
-3. **Optional second check with [alex](https://github.com/get-alex/alex).** If Node is installed, Claude can also run `npx alex`, a general-purpose tool for gendered, ableist, racial, condescending and profane wording. Alex doesn't know public-health conventions, so it complements the ECDC rules rather than replacing them. It is skipped if Node isn't available.
+3. **Optional second check with [alex](https://github.com/get-alex/alex).** Claude first asks whether it may check for alex (Node/`npx`) and, if it is missing, offers to help install it. It only installs with your agreement. With alex available, Claude also runs `npx alex`, a general-purpose tool for gendered, ableist, racial, condescending and profane wording. Alex doesn't know public-health conventions, so it complements the ECDC rules rather than replacing them. If you decline or Node isn't available, this step is skipped.
 4. **Claude reads the findings in context.** It drops false positives (quotes, citations, formal case definitions, established terms) and also looks for things a word list can't catch, such as list order implying hierarchy, or a group described without saying why.
 5. **Fixes.** A small set of safe terms can be replaced automatically (shown as a diff first). Everything else is rewritten by hand, keeping your meaning, numbers and citations. If a fix needs facts only you have (which countries, which groups, why risk is higher), Claude leaves a placeholder or asks, and doesn't invent them.
 6. **Report.** You get a short summary of what changed, what was left for you to decide, and why.

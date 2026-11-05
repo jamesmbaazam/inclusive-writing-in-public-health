@@ -12,7 +12,11 @@ Source: European Centre for Disease Prevention and Control. *Editorial guidance 
 ## Workflow
 
 1. **Locate the text.** A file, a folder, or text pasted in chat (write pasted text to a scratch file first).
-2. **Run the scanner** (stdlib Python 3, no installs):
+2. **Ask before checking for alex.** Alex is an optional second checker (see step 3). Ask the user, once per session: *"May I check whether alex (Node/npx) is installed, and help set it up if it isn't?"* Only after a yes:
+   - Check: `command -v node npx` (if not found, also try `export PATH=/opt/homebrew/bin:$PATH`) and, if present, `npx --yes alex@11.0.1 --version`.
+   - If missing, fix it only with the user's agreement to each install, and tell them what will be downloaded: Node via the platform's package manager (macOS: `brew install node`; Linux: the distro package manager or nvm; Windows: `winget install OpenJS.NodeJS.LTS`). Never use `sudo` or piped install scripts unasked. Then re-check.
+   - If the user says no, or setup fails, skip alex and note this in the report; the ECDC scanner works without it.
+3. **Run the scanner** (stdlib Python 3, no installs):
    ```bash
    python3 ~/.claude/skills/inclusive-writing-in-public-health/scripts/check_inclusive.py PATH [PATH...]
    ```
@@ -23,17 +27,17 @@ Source: European Centre for Disease Prevention and Control. *Editorial guidance 
    command -v npx >/dev/null && npx --yes alex@11.0.1 PATH --why      # .md/.txt (default)
    # plain text: add --text   |   HTML: add --html   |   MDX: add --mdx   |   stdin: echo "..." | npx --yes alex@11.0.1 --stdin
    ```
-   - If `npx`/Node is missing, skip this pass and say so in the report; don't install Node unasked. Pinning `@11.0.1` runs a known version; mention to the user that `npx` downloads it from npm on first use.
+   - If the user declined step 2, or `npx`/Node is missing and could not be set up, skip this pass and say so in the report. Pinning `@11.0.1` runs a known version; mention to the user that `npx` downloads it from npm on first use.
    - Tested with alex 11.0.1 on Node 26 (macOS/Homebrew; if `npx` isn't found, try `export PATH=/opt/homebrew/bin:$PATH`). First run prints harmless `npm warn deprecated …` lines; ignore them. Output is `line:col  warning  message  rule-id`, then the rule's note with `--why`.
    - Alex parses Markdown/HTML, so it ignores code and front matter, and it honours `.alexrc` / an `alex` field in `package.json` if the project has one. It exits non-zero when it finds something, which is normal.
    - Mute a justified finding with `<!--alex ignore rule-id-->` (or `.alexrc` `allow`) only if the user agrees; otherwise fix or leave it for the author. Not all alex rules suit scientific text (e.g. profanity matches like "butt" or "addict"; use `--why` to see the rule id and judge in context).
    - Merge alex's findings with the scanner's in one list. Where both flag the same span, use the ECDC suggestion.
-3. **Read the findings in context, then also read the text yourself.** The scanner is regex-only; it misses things in the "Judgement checks" below. Discard false positives (quotations, proper nouns, titles of cited works, formal case definitions, established terms such as "communities" in STI prevention, identity-first language a group prefers, e.g. many autistic/Deaf people).
-4. **Fix.**
+4. **Read the findings in context, then also read the text yourself.** The scanner is regex-only; it misses things in the "Judgement checks" below. Discard false positives (quotations, proper nouns, titles of cited works, formal case definitions, established terms such as "communities" in STI prevention, identity-first language a group prefers, e.g. many autistic/Deaf people).
+5. **Fix.**
    - *Mechanical, safe* terms can be auto-fixed: `check_inclusive.py PATH --fix` (dry-run diff), then `--fix --write` to apply. Safe set: GBMSM, PLHIV, HCW, PWID, birth defects, herd immunity, vaccine hesitancy, mother-to-child transmission. Always review the diff (grammar, article agreement, singular/plural, "define at first use" for *vertical transmission*).
    - *Everything else* needs a rewrite by hand: edit with the Edit tool, keep the author's meaning, numbers and citations intact, and **never alter direct quotations, reference titles, data labels or code** without asking.
    - Where the fix needs facts you don't have (which countries? which groups? why higher risk? age cut-off for "older adults"?), **don't invent them**. Insert a bracketed placeholder like `[name the specific countries]` or ask the user.
-5. **Report.** Summarise: files checked, number of changes by category, items left for the author's decision (with reason), and a note on anything you deliberately left unchanged (quotes, preferred identity-first terms). Re-run the scanner to confirm what remains is intentional.
+6. **Report.** Summarise: files checked, number of changes by category, items left for the author's decision (with reason), and a note on anything you deliberately left unchanged (quotes, preferred identity-first terms). Re-run the scanner to confirm what remains is intentional.
 
 If the user only asked to *check*, report and propose; don't edit. Default to non-destructive: prefer `--fix` dry-run, and edit copies or tracked files only when asked.
 
