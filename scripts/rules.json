@@ -1,0 +1,355 @@
+[
+ {
+  "id": "abbr-gbmsm",
+  "pattern": "\\bGBMSM\\b",
+  "suggest": "gay, bisexual and other men who have sex with men",
+  "why": "Abbreviations obscure that we are talking about people.",
+  "sec": "2.1",
+  "fix": "safe",
+  "replace": "gay, bisexual and other men who have sex with men"
+ },
+ {
+  "id": "abbr-plhiv",
+  "pattern": "\\bPLHIV\\b",
+  "suggest": "people living with HIV",
+  "why": "Abbreviations obscure that we are talking about people.",
+  "sec": "2.1",
+  "fix": "safe",
+  "replace": "people living with HIV"
+ },
+ {
+  "id": "abbr-hcw",
+  "pattern": "\\bHCWs?\\b",
+  "suggest": "healthcare workers",
+  "why": "Abbreviations obscure that we are talking about people.",
+  "sec": "2.1",
+  "fix": "safe",
+  "replace": "healthcare workers"
+ },
+ {
+  "id": "abbr-pwid",
+  "pattern": "\\bPWID\\b",
+  "suggest": "people who inject drugs",
+  "why": "Abbreviations obscure that we are talking about people.",
+  "sec": "2.1",
+  "fix": "safe",
+  "replace": "people who inject drugs"
+ },
+ {
+  "id": "the-homeless",
+  "pattern": "\\b(the|a) homeless\\b|\\bhomeless (person|people|population)s?\\b",
+  "suggest": "people experiencing homelessness / people who are homeless",
+  "why": "Person-first language.",
+  "sec": "2.1"
+ },
+ {
+  "id": "hiv-infected",
+  "pattern": "\\bHIV[- ]infected (people|persons?|individuals|patients|adults|children|women|men)\\b",
+  "suggest": "people living with HIV / people with HIV",
+  "why": "Person-first language.",
+  "sec": "2.1"
+ },
+ {
+  "id": "the-disabled",
+  "pattern": "\\b(the (mentally |physically )?disabled|(mentally|physically) disabled)\\b",
+  "suggest": "people with intellectual/physical disabilities",
+  "why": "Person-first language (check preference of the group).",
+  "sec": "2.1"
+ },
+ {
+  "id": "flu-cases",
+  "pattern": "\\b(flu|influenza|measles|mpox|covid(-19)?|tb|dengue|cholera) cases\\b",
+  "suggest": "people with influenza (or 'cases of influenza' if referring to occurrences)",
+  "why": "'Case' should refer to the occurrence, not the person. Check context.",
+  "sec": "2.1",
+  "context": true
+ },
+ {
+  "id": "drug-users",
+  "pattern": "\\b(drug users?|addicts?|(intravenous|injecting|iv) drug users?|junkies?)\\b",
+  "suggest": "people who use drugs / people with a drug addiction / people who inject drugs",
+  "why": "Do not define people by a behaviour.",
+  "sec": "2.1"
+ },
+ {
+  "id": "the-elderly",
+  "pattern": "\\b(the elderly|the aged|elderly (people|persons?))\\b",
+  "suggest": "older adults (define age at first mention) / people over the age of XX",
+  "why": "Person-first, specific.",
+  "sec": "2.1"
+ },
+ {
+  "id": "foreign-born",
+  "pattern": "\\bforeign[- ]born\\b",
+  "suggest": "people born outside [country] / outside the reporting country / outside the EU/EEA",
+  "why": "Othering and not specific.",
+  "sec": "2.1/2.2"
+ },
+ {
+  "id": "healthy-people",
+  "pattern": "\\bhealthy (people|persons?|individuals|adults|population|controls?|volunteers?)\\b",
+  "suggest": "people without [disease/condition] / people without underlying conditions",
+  "why": "Vague and value-laden.",
+  "sec": "2.1",
+  "context": true
+ },
+ {
+  "id": "infected-people",
+  "pattern": "\\b(infected|infectious|contagious|newly infected) (people|persons?|individuals|patients|cases?)\\b",
+  "suggest": "people with an infection / people who are infectious / people who can transmit the disease",
+  "why": "Do not refer to people as 'infected'.",
+  "sec": "2.1"
+ },
+ {
+  "id": "prisoners",
+  "pattern": "\\b(prisoners?|inmates?)\\b",
+  "suggest": "people in prison and/or in detention",
+  "why": "More person-centred and inclusive of other detained groups.",
+  "sec": "2.1"
+ },
+ {
+  "id": "prostitute",
+  "pattern": "\\bprostitutes?\\b",
+  "suggest": "sex worker(s)",
+  "why": "Frames sex work as labour, not a moral failing.",
+  "sec": "2.1"
+ },
+ {
+  "id": "sick-people",
+  "pattern": "\\bsick (people|persons?|individuals)\\b",
+  "suggest": "people with [disease/condition] / people with symptoms",
+  "why": "Vague; use person-first and specify.",
+  "sec": "2.1"
+ },
+ {
+  "id": "smokers",
+  "pattern": "\\b(non-?smokers?|former smokers?|ex-smokers?|smokers?)\\b",
+  "suggest": "people who smoke / people who do not smoke / people with a history of smoking",
+  "why": "Do not define people by a behaviour.",
+  "sec": "2.1"
+ },
+ {
+  "id": "case-as-person",
+  "pattern": "\\b(the|this|that|each|every|a|an|one|two|three|\\d+) (confirmed |suspected |probable |index |latest |new |severe |fatal )?cases? (is|are|was|were|has|have|had|recovered|recovering|died|presented|developed|admitted|reported symptoms)\\b",
+  "suggest": "the affected individual / the person",
+  "why": "'Case' used to mean a person is dehumanising.",
+  "sec": "2.1",
+  "context": true
+ },
+ {
+  "id": "vulnerable",
+  "pattern": "\\bvulnerable (groups?|populations?|communities|people|individuals)\\b",
+  "suggest": "[name specific groups] vulnerable to [infection / severe disease]",
+  "why": "State who and what they are vulnerable to; avoid implying it is inherent.",
+  "sec": "2.2"
+ },
+ {
+  "id": "marginalised",
+  "pattern": "\\bmarginali[sz]ed (communities|groups?|populations?)\\b",
+  "suggest": "groups underserved by / with limited access to healthcare due to …",
+  "why": "Vague.",
+  "sec": "2.2"
+ },
+ {
+  "id": "hard-to-reach",
+  "pattern": "\\bhard[- ]to[- ]reach\\b",
+  "suggest": "name the group; or 'groups not adequately reached by / facing barriers to accessing healthcare services'",
+  "why": "Vague and implies the group is the problem.",
+  "sec": "2.2"
+ },
+ {
+  "id": "high-risk-pop",
+  "pattern": "\\b(high[- ]risk|at[- ]risk) (populations?|groups?|people|individuals|communities)\\b|\\brisk groups?\\b",
+  "suggest": "Populations such as [name] are at higher risk of [outcome] due to …",
+  "why": "Name who, what risk, and ideally why.",
+  "sec": "2.2"
+ },
+ {
+  "id": "general-population",
+  "pattern": "\\b(the )?general (population|public)\\b",
+  "suggest": "populations at lower/higher risk of … / specify",
+  "why": "Implies a 'norm' versus 'outsiders' when used alongside other groups.",
+  "sec": "2.2",
+  "context": true
+ },
+ {
+  "id": "sub-populations",
+  "pattern": "\\bsub-?populations?\\b",
+  "suggest": "specific populations",
+  "why": "'Sub' can suggest lesser.",
+  "sec": "2.2"
+ },
+ {
+  "id": "atypical-pop",
+  "pattern": "\\batypical (populations?|groups?)\\b",
+  "suggest": "populations not typically affected by …",
+  "why": "Implies a 'norm'.",
+  "sec": "2.2"
+ },
+ {
+  "id": "eu-citizens",
+  "pattern": "\\bEU citizens?\\b|\\bcitizens\\b",
+  "suggest": "EU residents / EU population / people who live in the EU",
+  "why": "Excludes non-citizen residents.",
+  "sec": "2.2",
+  "context": true
+ },
+ {
+  "id": "msm",
+  "pattern": "\\bmen who have sex with men\\b|\\bMSM\\b",
+  "suggest": "gay, bisexual and other men who have sex with men (community); 'sex between men' (mode of transmission); 'men in this group' after first mention",
+  "why": "Avoid reducing a community to a sex act; clarify community vs transmission route.",
+  "sec": "2.2",
+  "context": true
+ },
+ {
+  "id": "pregnant-women",
+  "pattern": "\\b(pregnant women|maternal vaccination|vaccinated mothers?)\\b",
+  "suggest": "pregnant people / vaccination during pregnancy / child born to a vaccinated person",
+  "why": "Trans men, non-binary and intersex people can also be pregnant.",
+  "sec": "2.2"
+ },
+ {
+  "id": "migrants",
+  "pattern": "\\bmigrants\\b",
+  "suggest": "refugees / asylum seekers / undocumented migrants / newly arrived migrants / people born outside the reporting country",
+  "why": "Very broad; be specific.",
+  "sec": "2.2",
+  "context": true
+ },
+ {
+  "id": "illegal-immigrants",
+  "pattern": "\\billegal (immigrants?|migrants?|aliens?)\\b",
+  "suggest": "undocumented migrants",
+  "why": "Stigmatising.",
+  "sec": "2.3"
+ },
+ {
+  "id": "region-generalisation",
+  "pattern": "\\b(in|across|throughout) (Eastern Europe|Africa|Sub-Saharan Africa|Asia|Latin America|the Middle East|the developing world)\\b",
+  "suggest": "name the specific countries involved",
+  "why": "Regional generalisations mask differences and reinforce stereotypes.",
+  "sec": "2.2",
+  "context": true
+ },
+ {
+  "id": "bodily-fluids",
+  "pattern": "\\bbod(il)?y fluids?\\b",
+  "suggest": "name the specific fluids relevant to the pathogen (e.g. blood, semen, vaginal fluid)",
+  "why": "Be specific.",
+  "sec": "2.2"
+ },
+ {
+  "id": "chemsex",
+  "pattern": "\\bchemsex\\b",
+  "suggest": "define at first use: 'the use of specific psychoactive substances to enhance sexual experiences'",
+  "why": "Not all readers know the term.",
+  "sec": "2.2",
+  "context": true
+ },
+ {
+  "id": "sexual-contact",
+  "pattern": "\\bsexual contact\\b",
+  "suggest": "specify the type of contact",
+  "why": "Vague.",
+  "sec": "2.2",
+  "context": true
+ },
+ {
+  "id": "heterosexual-contact",
+  "pattern": "\\bheterosexual (contact|transmission|sex)\\b",
+  "suggest": "sex between men and women",
+  "why": "Be specific about transmission mode.",
+  "sec": "2.2"
+ },
+ {
+  "id": "birth-defects",
+  "pattern": "\\bbirth defects?\\b",
+  "suggest": "congenital conditions / congenital disorders",
+  "why": "'Defect' implies the person is defective.",
+  "sec": "2.3",
+  "fix": "safe",
+  "replace": "congenital conditions",
+  "replace_singular": "congenital condition"
+ },
+ {
+  "id": "herd-immunity",
+  "pattern": "\\bherd immunity\\b",
+  "suggest": "population immunity",
+  "why": "Animal reference is dehumanising.",
+  "sec": "2.3",
+  "fix": "safe",
+  "replace": "population immunity"
+ },
+ {
+  "id": "target",
+  "pattern": "\\b(target(ed|ing)?|tackl(e|es|ed|ing)|aimed at)\\b",
+  "suggest": "engage / prioritise / partner with / serve / tailored to / address / intends to reach; 'priority population', 'intended audience', 'key population'",
+  "why": "Combative language.",
+  "sec": "2.3",
+  "context": true
+ },
+ {
+  "id": "trigger",
+  "pattern": "\\btrigger(s|ed|ing)?\\b",
+  "suggest": "prompt",
+  "why": "Combative language.",
+  "sec": "2.3",
+  "context": true
+ },
+ {
+  "id": "spread-infect-verb",
+  "pattern": "\\b(transmitted|spread|passed on) (the|a) (disease|virus|infection)\\b|\\binfected (others|\\w+ (other|close) \\w+)\\b|\\b(was|were|been|get|got|become|became|catch|caught) infected\\b|\\bbecome infected\\b|\\bcatch(es|ing)?\\b (the |a )?(virus|disease|infection|covid|flu)\\b",
+  "suggest": "contracted / acquired the infection; 'people close to the patient contracted X from the patient'",
+  "why": "Implies intent or blame.",
+  "sec": "2.3",
+  "context": true
+ },
+ {
+  "id": "compliance",
+  "pattern": "\\b(non-?compliant|compliance|compliant|noncompliance)\\b",
+  "suggest": "adherent / non-adherent / people who do/do not complete treatment",
+  "why": "Casts patients as passive; mention barriers where known.",
+  "sec": "2.3",
+  "context": true
+ },
+ {
+  "id": "mother-to-child",
+  "pattern": "\\bmother[- ]to[- ]child transmission\\b",
+  "suggest": "vertical transmission (define at first use)",
+  "why": "Can sound accusatory.",
+  "sec": "2.3",
+  "fix": "safe",
+  "replace": "vertical transmission"
+ },
+ {
+  "id": "risk-behaviour",
+  "pattern": "\\brisk(y)? (activity|activities|behaviou?rs?)\\b",
+  "suggest": "behaviour that increases the risk of transmission …; or name the behaviour and why it raises risk",
+  "why": "Suggests judgement or blame.",
+  "sec": "2.3"
+ },
+ {
+  "id": "unprotected-sex",
+  "pattern": "\\bunprotected (sex|sexual|intercourse)\\b",
+  "suggest": "sex without a condom / condomless sex / sex without a condom or other prevention (e.g. PrEP)",
+  "why": "Suggests fault.",
+  "sec": "2.3"
+ },
+ {
+  "id": "vaccine-hesitancy",
+  "pattern": "\\bvaccine hesitancy\\b",
+  "suggest": "vaccine acceptance",
+  "why": "Avoids shaming people for having questions.",
+  "sec": "2.3",
+  "fix": "safe",
+  "replace": "vaccine acceptance"
+ },
+ {
+  "id": "alcoholics",
+  "pattern": "\\balcoholics?\\b|\\binner[- ]city (inhabitants|poor)\\b|\\bthe poor\\b",
+  "suggest": "people who drink alcohol heavily / describe settings and barriers instead",
+  "why": "Blames people or their socio-economic status.",
+  "sec": "2.3"
+ }
+]
