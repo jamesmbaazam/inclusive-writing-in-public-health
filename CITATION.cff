@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this skill, please cite it. Please also cite the ECDC guidance it is based on (see references)."
 title: "inclusive-writing-in-public-health: a Claude Code skill for checking inclusive language in public health writing"
 type: software
-version: 0.1.0
+version: 0.1.1
 date-released: 2026-11-05
 license: MIT
 repository-code: "https://github.com/jamesmbaazam/inclusive-writing-in-public-health"

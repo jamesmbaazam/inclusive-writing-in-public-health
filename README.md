@@ -1,6 +1,6 @@
 # inclusive-writing-in-public-health
 
-Version 0.1.0
+Version 0.1.1
 
 A [Claude Code](https://claude.com/claude-code) skill that checks, and helps fix, stigmatising or dehumanising language in public health writing. It combines the [ECDC inclusive writing guidelines](https://www.ecdc.europa.eu/en/publications-data/inclusive-writing-ecdc) (public health specific rules) with the [alex](https://github.com/get-alex/alex) tool (general gendered, ableist, racial and condescending wording), so you get both kinds of check in one pass.
 
@@ -48,13 +48,13 @@ This skill is an independent adaptation and is not produced, endorsed or reviewe
 
 If you find it useful, you are welcome to cite it, though you don't have to. GitHub's "Cite this repository" button (from [`CITATION.cff`](CITATION.cff)) gives APA and BibTeX. Please also cite the ECDC guide above, which is the source of the content.
 
-> Azam J. inclusive-writing-in-public-health: a Claude Code skill for checking inclusive language in public health writing (v0.1.0) [software]. 2026. https://github.com/jamesmbaazam/inclusive-writing-in-public-health
+> Azam J. inclusive-writing-in-public-health: a Claude Code skill for checking inclusive language in public health writing (v0.1.1) [software]. 2026. https://github.com/jamesmbaazam/inclusive-writing-in-public-health
 
 ```bibtex
 @software{azam_inclusive_writing_in_public_health_2026,
   author  = {Azam, James},
   title   = {inclusive-writing-in-public-health: a Claude Code skill for checking inclusive language in public health writing},
-  version = {0.1.0},
+  version = {0.1.1},
   year    = {2026},
   url     = {https://github.com/jamesmbaazam/inclusive-writing-in-public-health},
   license = {MIT}
