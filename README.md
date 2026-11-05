@@ -25,9 +25,20 @@ If you only ask for a check, Claude reports and suggests but doesn't edit.
 
 ## Install and use
 
-Copy this folder to `~/.claude/skills/inclusive-writing-in-public-health/` (or a project's `.claude/skills/`). Then ask, for example: *"Check manuscript.md for inclusive language"*, or run `/inclusive-writing-in-public-health`.
+Install by cloning this repository into your Claude Code skills folder (requires [git](https://git-scm.com/) and Claude Code; Python 3 is needed for the scanner):
 
-Run the scanner directly (Python 3, no dependencies):
+```bash
+git clone https://github.com/jamesmbaazam/inclusive-writing-in-public-health.git \
+  ~/.claude/skills/inclusive-writing-in-public-health
+```
+
+To update later, run `git pull` inside that folder. To pin a release, run `git checkout v0.1.1`.
+
+The skill's instructions call the scanner at `~/.claude/skills/inclusive-writing-in-public-health/scripts/`, so keep the folder name and location as above. (To use it in a single project instead, clone into `<project>/.claude/skills/` and update that path in `SKILL.md`.)
+
+Then start Claude Code (a new session if one was already open) and ask, for example: *"Check manuscript.md for inclusive language"*, or run `/inclusive-writing-in-public-health`.
+
+You can also run the scanner directly from the cloned folder (Python 3, no dependencies):
 
 ```bash
 python3 scripts/check_inclusive.py manuscript.md          # report
