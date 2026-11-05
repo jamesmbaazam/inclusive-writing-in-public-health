@@ -3,7 +3,7 @@
 All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [0.1.2] - 2026-11-05
 
 ### Changed
 - README install section now tells users to clone the repository and gives the `git clone`, update and version-pin commands.
@@ -31,5 +31,6 @@ First release.
 - Scope is public health only; the rules may not suit other fields.
 - The ECDC guide is not bundled; see the README for the source link.
 
+[0.1.2]: https://github.com/jamesmbaazam/inclusive-writing-in-public-health/releases/tag/v0.1.2
 [0.1.1]: https://github.com/jamesmbaazam/inclusive-writing-in-public-health/releases/tag/v0.1.1
 [0.1.0]: https://github.com/jamesmbaazam/inclusive-writing-in-public-health/releases/tag/v0.1.0
